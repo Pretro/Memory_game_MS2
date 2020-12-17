@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <!--CSS Folder-->
-    <link rel="stylesheet" href="..css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <!--Javascript folder-->
     <link rel="stylesheet" href="..js/functions.js">
     
@@ -16,13 +16,18 @@
   </head>
   <body>
       <!--Game Board-->
-      <section class="playing-board">
-          <div class="cards">
-              <img class="face-1" src="../images/covid19_A.jpg" alt="card-1">
-              <img class="face-2" src="../images/mona-lisa.jpg" alt="card-2">
-          </div>
-      </section>
-      <!--End Game Board-->
+    <div id="container">
+        <div id="game-board">
+          
+            <div class="card_back" id="c1" onclick="play(1)"></div>
+            
+            
+
+        </div>
+        
+        
+    </div>
+    
    
 
 

@@ -1,10 +1,61 @@
-*{
+body{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
 }
 
-body{
-    height: 100vh;
-    background: chartreuse;
+/*Playing screen*/
+#container{
+margin-left: 25px;
+height: 600px;
+}
+
+/*Playing board*/
+#game-board{
+margin-top: 20px;
+margin-left: 40px;
+width: 200px;
+height: 150px;
+perspective: 1200px;
+float: left;
+background: transparent;
+}
+.card-inner{
+    width: 100%;
+    height: 100%;
+    transition: 0.75s ease;    
+    position:absolute;
+}
+
+.card_back{
+    background-image: url('../images/mona.png');
+}
+.card_front0{
+    background-image: url('../images/vaccine.png');
+}
+.card_front1{
+    background-image: url('../images/nurses.png');
+}
+.card_front2{
+    background-image: url('../images/doctors.png');
+}
+.card_front3{
+    background-image: url('../images/distance.png');
+}
+.card_front4{
+    background-image: url('../images/corona-sign.png');
+}
+.card_front5{
+    background-image: url('../images/stay_at_home.png');
+}
+.card_front6{
+    background-image: url('../images/wash_hands.png');
+}
+.card_front7{
+    background-image: url('../images/corona-sign.png');
+}
+.card_front8{
+    background-color: aqua;
+}
+.card_front9{
+    background-color: red;    
 }
