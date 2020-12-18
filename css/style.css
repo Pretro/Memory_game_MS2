@@ -11,25 +11,26 @@ height: 600px;
 
 /*Playing board*/
 #game_board{
-    display: block;
+    display: flex;
     margin-top: 20px;
     margin-left: 40px;
     width: 800px;
     height: 800px;
-    float: center;
+    flex-wrap: wrap;
+    perspective: 1000px;
     background: transparent;
 }
-/*.card-inner{
-    width: 100%;
-    height: 100%;
+.card-inner{
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
     transition: 0.75s ease;    
     position:absolute;
-}*/
+}
 
 .card{
     width: 150px;
     height: 150px;
-    display: block;
+    display: flex;
 }
 
 .card_back{
