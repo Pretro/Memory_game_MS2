@@ -1,7 +1,7 @@
-let gameBoard=document.getElementById('game-board');
+let gameBoard=document.getElementById('game_board');
 
 let cards=[];
-for(let i=0; i<=20; i++){
+for(let i=0; i<=19; i++){
     cards.push('<div class="card card_back" id="c'+i+'" onclick="play('+i+')"></div>')
 }
 gameBoard.innerHTML=cards.join(''); 
