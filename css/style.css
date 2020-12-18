@@ -11,13 +11,14 @@ height: 600px;
 
 /*Playing board*/
 #game-board{
-margin-top: 20px;
-margin-left: 40px;
-width: 200px;
-height: 150px;
-perspective: 1200px;
-float: left;
-background: transparent;
+   
+    margin-top: 20px;
+    margin-left: 40px;
+    width: 800px;
+    height: 1200px;
+    perspective: 1200px;
+    float: left;
+    background: transparent;
 }
 .card-inner{
     width: 100%;
@@ -26,9 +27,16 @@ background: transparent;
     position:absolute;
 }
 
+.card{
+    width: 150px;
+    height: 150px;
+    display: inline-table;
+}
+
 .card_back{
     background-image: url('../images/mona.png');
 }
+
 .card_front0{
     background-image: url('../images/vaccine.png');
 }
