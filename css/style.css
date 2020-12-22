@@ -17,26 +17,30 @@ height: 600px;
     width: 800px;
     height: 800px;
     flex-wrap: wrap;
-    perspective: 1000px;
+    perspective: 1200px;
     background: transparent;
+
 }
 .card-inner{
     width: calc(25% - 10px);
     height: calc(33.333% - 10px);
-    transition: 0.75s ease;    
+    transition:all 0.75s ease;
+    transform-style: preserve-3d;    
     position:absolute;
 }
-
 .card{
     width: 150px;
-    height: 150px;
+    height: 190px;
     display: flex;
+    margin-left: auto;
+    background-size: cover;
 }
-
+.card_match{
+    border: 1px solid red;
+}
 .card_back{
     background-image: url('../images/mona.png');
 }
-
 .card_front0{
     background-image: url('../images/vaccine.png');
 }
@@ -59,7 +63,7 @@ height: 600px;
     background-image: url('../images/wash_hands.png');
 }
 .card_front7{
-    background-image: url('../images/corona-sign.png');
+    background-color: yellow;
 }
 .card_front8{
     background-color: aqua;
