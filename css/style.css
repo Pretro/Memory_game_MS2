@@ -5,8 +5,15 @@ body{
 
 /*Playing screen*/
 #container{
-margin-left: 25px;
-height: 600px;
+    margin-left: 25px;
+    height: 600px;
+    display: flex;
+}
+
+/*Score Board*/
+.score_board{
+    width: 200px;
+    float: left;
 }
 
 /*Playing board*/

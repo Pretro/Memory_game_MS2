@@ -15,8 +15,19 @@
     <title>Memory Game</title>
   </head>
   <body>
+      <h1>Memory Game</h1>
       <!--Game Board-->
     <div id="container">
+        <div class="score_board">
+            <h2>Score Board</h2>
+            <p>Time:<span id="game_time"></span></p>
+            <p>Clicks:<span id="click_counts"></span></p>
+            <p>Matched:<span id="matched_cards">0/10</span></p>
+            <br>
+            <p>Result: <br>
+            <span id="result"></span></p>
+            <p><button onclick="createGame()" id="game_btn">Start Game</button></p>
+        </div>
         <div id="game_board">       
         </div>    
     </div>
