@@ -1,6 +1,9 @@
 body{
     padding: 0;
     margin: 0;
+    background-image: url(/images/main.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /*Playing screen*/
@@ -11,16 +14,17 @@ body{
 }
 
 /*Score Board*/
-.score_board{
-    width: 200px;
-    float: left;
+.score_board {
+    width: auto;
+    height: auto;
+    position: absolute;
 }
 
 /*Playing board*/
 #game_board{
     display: flex;
     margin-top: 20px;
-    margin-left: 40px;
+    margin-left: 330px;
     width: 800px;
     height: 800px;
     flex-wrap: wrap;
@@ -41,12 +45,19 @@ body{
     display: flex;
     margin-left: auto;
     background-size: cover;
+    transition: 0.3s;
+    cursor: pointer;
+    
 }
 .card_match{
     border: 1px solid red;
 }
 .card_back{
     background-image: url('../images/mona.png');
+    width: 150px;
+    height: 190px;
+    transition: 0.3s;
+    cursor: pointer;
 }
 .card_front0{
     background-image: url('../images/vaccine.png');
@@ -70,11 +81,11 @@ body{
     background-image: url('../images/wash_hands.png');
 }
 .card_front7{
-    background-color: yellow;
+    background-image: url('../images/world.png');
 }
 .card_front8{
-    background-color: aqua;
+    background-image: url('../images/girl.png');
 }
 .card_front9{
-    background-color: red;    
+    background-image: url('../images/mask.png');    
 }
