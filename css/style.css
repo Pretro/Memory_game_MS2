@@ -24,12 +24,13 @@ body{
 #game_board{
     display: flex;
     margin-top: 20px;
-    margin-left: 330px;
+    margin-left: 530px;
     width: 800px;
     height: 800px;
     flex-wrap: wrap;
     perspective: 1200px;
     background: transparent;
+    align-content: center;
 
 }
 .card-inner{
@@ -42,12 +43,16 @@ body{
 .card{
     width: 150px;
     height: 190px;
-    display: flex;
+    display: block;
     margin-left: auto;
     background-size: cover;
     transition: 0.3s;
     cursor: pointer;
-    
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    transform: scale(1.03);
 }
 .card_match{
     border: 1px solid red;
@@ -59,33 +64,107 @@ body{
     transition: 0.3s;
     cursor: pointer;
 }
+
+.card_back{
+    transform: scale(1.03);
+}
 .card_front0{
     background-image: url('../images/vaccine.png');
+    width: 150px;
+    height: 190px;
+    transition: 0.3s;
+    cursor: pointer;
 }
 .card_front1{
     background-image: url('../images/nurses.png');
+    width: 150px;
+    height: 190px;
+    transition: 0.3s;
+    cursor: pointer;
 }
 .card_front2{
     background-image: url('../images/doctors.png');
+    width: 150px;
+    height: 190px;
+    transition: 0.3s;
+    cursor: pointer;
 }
 .card_front3{
     background-image: url('../images/distance.png');
+    width: 150px;
+    height: 190px;
+    transition: 0.3s;
+    cursor: pointer;
 }
 .card_front4{
     background-image: url('../images/corona-sign.png');
+    width: 150px;
+    height: 190px;
+    transition: 0.3s;
+    cursor: pointer;
 }
 .card_front5{
     background-image: url('../images/stay_at_home.png');
+    width: 150px;
+    height: 190px;
+    transition: 0.3s;
+    cursor: pointer;
+    background-position: center;
+    background-size: 150px 190px;
+    background-repeat: no-repeat;
 }
 .card_front6{
     background-image: url('../images/wash_hands.png');
+    width: 150px;
+    height: 190px;
+    transition: 0.3s;
+    cursor: pointer;
 }
 .card_front7{
     background-image: url('../images/world.png');
+    width: 150px;
+    height: 190px;
+    transition: 0.3s;
+    cursor: pointer;
 }
 .card_front8{
     background-image: url('../images/girl.png');
+    width: 150px;
+    height: 190px;
+    transition: 0.3s;
+    cursor: pointer;
 }
 .card_front9{
     background-image: url('../images/mask.png');    
+     width: 150px;
+    height: 190px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/*Scoring board*/
+h1 {
+    text-align: center;
+    color: antiquewhite;
+}
+
+ .score_board h2{
+    color: antiquewhite;
+    width: 220px;
+    height: 30px;
+    margin: 5px;
+    margin-left: 200px;
+}
+
+p{
+    color: antiquewhite;
+    margin-left: 200px;
+}
+
+#game_btn{
+    margin-left: 35px;
+    background-color: red;
+    border: 2px solid yellow;
+    color: antiquewhite;
+    border-radius: 10px;
 }
