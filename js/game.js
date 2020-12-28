@@ -1,11 +1,26 @@
-function createGame() {
+function createGame(onFlip, onMatch, onTimeout, onWin) {
     return {
-        gameTime: new Date(),
+        gameTime: undefined,
         cards: createCards(),
         countOpen: 0,
         countClick: 0,
         countMatches: 0,
         completed: false,
+        gameTimeReference: undefined,
+        start: function () {
+            this.gameTime = new Date();
+            this.gameTimeReference = setTimeout(() => this.timeout(), 60000);
+        },
+        timeout: function () {
+            this.completed = true;
+            clearTimeout(this.gameTimeReference);
+            onTimeout();
+        },
+        win: function () {
+            this.completed = true;
+            clearTimeout(this.gameTimeReference);
+            onWin();
+        },
         play: function (cardNumber) {
             if (!this.completed) {
                 return;
@@ -29,17 +44,14 @@ function createGame() {
             if (selectedCards[0].variant === selectedCards[1].variant) {
                 this.countMatches++;
                 this.countOpen = 0;
-                if (this.countMatches===10){
-                    this.completed = true;
-                }
                 selectedCards.forEach(selectedCard => {
                     selectedCard.found = true;
-                    if (selectedCard.onMatch) {
-                        selectedCard.onMatch(selectedCard)
-                    }
+                    onMatch(selectedCard);
                 });
+                if (this.countMatches === 10) {
+                    this.win();
+                }
             } else {
-                console.log('Not Matched', selectedCards);
                 setTimeout(() => {
                     selectedCards.forEach(selectedCard => {
                         flipCardDown(selectedCard.index);
@@ -50,16 +62,12 @@ function createGame() {
         flipCardDown: function (cardNumber) {
             this.cards[cardNumber].open = false;
             this.countOpen--;
-            if (this.cards[cardNumber].onFlip) {
-                this.cards[cardNumber].onFlip(this.cards[cardNumber]);
-            }
+            onFlip(this.cards[cardNumber]);
         },
         flipCardUp: function (cardNumber) {
             this.cards[cardNumber].open = true;
             this.countOpen++;
-            if (this.cards[cardNumber].onFlip) {
-                this.cards[cardNumber].onFlip(this.cards[cardNumber]);
-            }
+            onFlip(this.cards[cardNumber]);
         }
     }
 }
@@ -77,23 +85,3 @@ function createCards() {
     return cards;
 }
 
-function updateScoreBoard() {
-    if (!gameTime) {
-        return;
-    }
-    let elapsedSeconds = (Date.now() - gameTime.getTime()) / 1000;
-    document.getElementById('game_time').innerHTML = elapsedSeconds;
-    document.getElementById('click_counts').innerHTML = countClick;
-    document.getElementById('matched_cards').innerHTML = '' + countMatches + '/10';
-
-    if (elapsedSeconds > 60) {
-        gameTime = undefined;
-        document.getElementById('result').innerHTML = 'You looser';
-    }
-    if (countMatches === 10) {
-        gameTime = undefined;
-        document.getElementById('result').innerHTML = 'You are a boring winner';
-    }
-}
-
-setInterval(updateScoreBoard, 100);
