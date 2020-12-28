@@ -22,7 +22,7 @@ function createGame(onFlip, onMatch, onTimeout, onWin) {
             onWin();
         },
         play: function (cardNumber) {
-            if (!this.completed) {
+            if (this.completed) {
                 return;
             }
             this.countClick++;
@@ -54,7 +54,7 @@ function createGame(onFlip, onMatch, onTimeout, onWin) {
             } else {
                 setTimeout(() => {
                     selectedCards.forEach(selectedCard => {
-                        flipCardDown(selectedCard.index);
+                        this.flipCardDown(selectedCard.index);
                     });
                 }, 1000)
             }
