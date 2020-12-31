@@ -1,54 +1,42 @@
 body{
-    padding: 0;
-    margin: 0;
-    background-image: url(/images/main.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+background-color: darkorange;
 }
-
-/*Playing screen*/
-#container{
-    margin-left: 25px;
-    height: 600px;
-    display: flex;
-}
-
 /*Score Board*/
 .score_board {
     width: auto;
     height: auto;
-    position: absolute;
+    text-align: center;
+    color: antiquewhite;
 }
-
 /*Playing board*/
 #game_board{
-    display: flex;
-    margin-top: 20px;
-    margin-left: 530px;
-    width: 800px;
-    height: 800px;
-    flex-wrap: wrap;
-    perspective: 1200px;
-    background: transparent;
-    align-content: center;
-
+    background-color: darkblue;
+    margin-top: 50px;
+    position: relative;
+    left:10%;
 }
+
+h1 {
+    text-align: center;
+    color: antiquewhite;
+}
+
 .card-inner{
     width: calc(25% - 10px);
     height: calc(33.333% - 10px);
     transition:all 0.75s ease;
     transform-style: preserve-3d;    
-    position:absolute;
+    position:relative;
 }
+/*Playing cards*/
 .card{
-    width: 150px;
-    height: 190px;
-    display: block;
-    margin-left: auto;
-    background-size: cover;
-    transition: 0.3s;
-    cursor: pointer;
-    margin-bottom: 10px;
+   width: 130px;
+   height: 130px;
+   transition: 0.3s;
+   cursor: pointer;
+   position: relative;
+   float: left;
+   margin: 10px;
 }
 
 .card:hover {
@@ -57,114 +45,87 @@ body{
 .card_match{
     border: 1px solid red;
 }
-.card_back{
-    background-image: url('../images/mona.png');
-    width: 150px;
-    height: 190px;
-    transition: 0.3s;
-    cursor: pointer;
-}
 
 .card_back{
-    transform: scale(1.03);
+    background-image: url('../images/mona.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
+
 .card_front0{
-    background-image: url('../images/vaccine.png');
-    width: 150px;
-    height: 190px;
-    transition: 0.3s;
-    cursor: pointer;
+    background-image: url('../images/vaccine.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .card_front1{
-    background-image: url('../images/nurses.png');
-    width: 150px;
-    height: 190px;
-    transition: 0.3s;
-    cursor: pointer;
+    background-image: url('../images/caution.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .card_front2{
-    background-image: url('../images/doctors.png');
-    width: 150px;
-    height: 190px;
-    transition: 0.3s;
-    cursor: pointer;
+    background-image: url('../images/injection.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .card_front3{
-    background-image: url('../images/distance.png');
-    width: 150px;
-    height: 190px;
-    transition: 0.3s;
-    cursor: pointer;
+    background-image: url('../images/virus.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .card_front4{
-    background-image: url('../images/corona-sign.png');
-    width: 150px;
-    height: 190px;
-    transition: 0.3s;
-    cursor: pointer;
+    background-image: url('../images/covid_19.jpg');
+    background-position: center;
+   background-size: cover;
+    background-repeat: no-repeat;
 }
 .card_front5{
-    background-image: url('../images/stay_at_home.png');
-    width: 150px;
-    height: 190px;
-    transition: 0.3s;
-    cursor: pointer;
+    background-image: url('../images/stay_safe.jpg');
     background-position: center;
-    background-size: 150px 190px;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 .card_front6{
-    background-image: url('../images/wash_hands.png');
-    width: 150px;
-    height: 190px;
-    transition: 0.3s;
-    cursor: pointer;
+    background-image: url('../images/wash_hands.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .card_front7{
     background-image: url('../images/world.png');
-    width: 150px;
-    height: 190px;
-    transition: 0.3s;
-    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .card_front8{
     background-image: url('../images/girl.png');
-    width: 150px;
-    height: 190px;
-    transition: 0.3s;
-    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .card_front9{
     background-image: url('../images/mask.png');    
-     width: 150px;
-    height: 190px;
-    transition: 0.3s;
-    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-
-/*Scoring board*/
-h1 {
-    text-align: center;
-    color: antiquewhite;
-}
-
- .score_board h2{
-    color: antiquewhite;
-    width: 220px;
-    height: 30px;
-    margin: 5px;
-    margin-left: 200px;
-}
-
-p{
-    color: antiquewhite;
-    margin-left: 200px;
-}
-
+/*Score board button*/
 #game_btn{
-    margin-left: 35px;
+    
     background-color: red;
     border: 2px solid yellow;
     color: antiquewhite;
     border-radius: 10px;
+    align-items: center;
+}
+
+@media (max-width: 375px) { 
+    .card{
+   width: 60px;
+   height: 60px;
+    }
 }
